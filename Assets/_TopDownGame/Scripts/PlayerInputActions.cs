@@ -18,12 +18,12 @@ namespace TopDownGame.Inputs
     ""maps"": [
         {
             ""name"": ""Player"",
-            ""id"": ""290db009-cd32-4868-8802-234ee2fc22e1"",
+            ""id"": ""2fc16b82-f359-4947-ae78-54dce4bb45b7"",
             ""actions"": [
                 {
                     ""name"": ""Move"",
                     ""type"": ""Value"",
-                    ""id"": ""4259c701-5073-481d-929c-81af17104c0a"",
+                    ""id"": ""92144ff0-0b3c-4b63-852f-fec23ec6457c"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": ""NormalizeVector2"",
                     ""interactions"": """"
@@ -31,7 +31,7 @@ namespace TopDownGame.Inputs
                 {
                     ""name"": ""Look"",
                     ""type"": ""Value"",
-                    ""id"": ""de5a7582-bb0a-4c68-8a67-19c6570a4f4a"",
+                    ""id"": ""33f74251-5d06-4723-9eec-df0a332fc256"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -39,7 +39,7 @@ namespace TopDownGame.Inputs
                 {
                     ""name"": ""Fire"",
                     ""type"": ""Button"",
-                    ""id"": ""25cbb01e-9239-4a03-9d82-703a90516b7d"",
+                    ""id"": ""a8b505a5-4ae7-4d2f-be6f-2d7d752c8bdd"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -270,12 +270,12 @@ namespace TopDownGame.Inputs
         },
         {
             ""name"": ""UI"",
-            ""id"": ""18ccab64-65ce-4e89-86bf-36c2f83f7649"",
+            ""id"": ""266460de-65c6-406f-a2ed-82100f906c65"",
             ""actions"": [
                 {
                     ""name"": ""Navigate"",
                     ""type"": ""Value"",
-                    ""id"": ""e0d9dcd4-81a5-4424-ba54-47c4c158dd43"",
+                    ""id"": ""e64be35b-eeb5-400e-bec5-8b78f8333933"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -283,7 +283,7 @@ namespace TopDownGame.Inputs
                 {
                     ""name"": ""Submit"",
                     ""type"": ""Button"",
-                    ""id"": ""6abae7fb-894d-49e2-a91c-3c595854fdcd"",
+                    ""id"": ""7ddb39bb-02c6-4e31-94a9-c67315b5e500"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -291,7 +291,7 @@ namespace TopDownGame.Inputs
                 {
                     ""name"": ""Cancel"",
                     ""type"": ""Button"",
-                    ""id"": ""6fde3d63-3f82-4a6b-a191-d48863cdc9ec"",
+                    ""id"": ""a1413f9c-b4d2-48fe-9032-ca8e480e57ce"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -299,7 +299,7 @@ namespace TopDownGame.Inputs
                 {
                     ""name"": ""Point"",
                     ""type"": ""PassThrough"",
-                    ""id"": ""9545f654-f908-4dad-98ac-ff21f9ac1de0"",
+                    ""id"": ""37227ac8-8f67-47c2-a085-4ca345c1835a"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -307,7 +307,7 @@ namespace TopDownGame.Inputs
                 {
                     ""name"": ""Click"",
                     ""type"": ""PassThrough"",
-                    ""id"": ""6d393c80-ea26-471e-8925-aedddfd349f6"",
+                    ""id"": ""853490b9-b9ca-4460-b00a-f1947f0dd1d2"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -315,7 +315,7 @@ namespace TopDownGame.Inputs
                 {
                     ""name"": ""ScrollWheel"",
                     ""type"": ""PassThrough"",
-                    ""id"": ""499ccc08-b712-4517-9f24-dfe171ac40b3"",
+                    ""id"": ""33d27183-0101-41cf-b37c-e26bd3c26124"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -323,7 +323,7 @@ namespace TopDownGame.Inputs
                 {
                     ""name"": ""MiddleClick"",
                     ""type"": ""PassThrough"",
-                    ""id"": ""0487ae08-3b9c-4eea-8997-99e0a47d5b0f"",
+                    ""id"": ""c1d3ec21-4dbd-4ef9-a97c-23ea6aa88a83"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """"
@@ -331,7 +331,7 @@ namespace TopDownGame.Inputs
                 {
                     ""name"": ""RightClick"",
                     ""type"": ""PassThrough"",
-                    ""id"": ""0dddfff1-092c-4aa5-893d-592e13426201"",
+                    ""id"": ""217ae473-28a4-4a66-a5e9-52c30ec6a38c"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """"
@@ -339,7 +339,7 @@ namespace TopDownGame.Inputs
                 {
                     ""name"": ""TrackedDevicePosition"",
                     ""type"": ""PassThrough"",
-                    ""id"": ""379224b4-1532-49e4-8d94-ce4783b8542f"",
+                    ""id"": ""ca97a4ec-1a13-4e79-8cab-887f790b342c"",
                     ""expectedControlType"": ""Vector3"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -347,7 +347,7 @@ namespace TopDownGame.Inputs
                 {
                     ""name"": ""TrackedDeviceOrientation"",
                     ""type"": ""PassThrough"",
-                    ""id"": ""359eafcf-2651-4b9e-aee3-e8e75688607b"",
+                    ""id"": ""f3d868fa-13fc-4865-a847-05edef1941e0"",
                     ""expectedControlType"": ""Quaternion"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -773,33 +773,6 @@ namespace TopDownGame.Inputs
                     ""isPartOfComposite"": false
                 }
             ]
-        },
-        {
-            ""name"": ""asd"",
-            ""id"": ""3f372d59-2732-4bf6-8420-454375ec29f5"",
-            ""actions"": [
-                {
-                    ""name"": ""New action"",
-                    ""type"": ""Button"",
-                    ""id"": ""cd688314-193b-4865-9880-4e5041b083e7"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                }
-            ],
-            ""bindings"": [
-                {
-                    ""name"": """",
-                    ""id"": ""13db2ec5-e82d-4d48-8687-9427dd329010"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""New action"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                }
-            ]
         }
     ],
     ""controlSchemes"": [
@@ -882,9 +855,6 @@ namespace TopDownGame.Inputs
             m_UI_RightClick = m_UI.FindAction("RightClick", throwIfNotFound: true);
             m_UI_TrackedDevicePosition = m_UI.FindAction("TrackedDevicePosition", throwIfNotFound: true);
             m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
-            // asd
-            m_asd = asset.FindActionMap("asd", throwIfNotFound: true);
-            m_asd_Newaction = m_asd.FindAction("New action", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -1084,39 +1054,6 @@ namespace TopDownGame.Inputs
             }
         }
         public UIActions @UI => new UIActions(this);
-
-        // asd
-        private readonly InputActionMap m_asd;
-        private IAsdActions m_AsdActionsCallbackInterface;
-        private readonly InputAction m_asd_Newaction;
-        public struct AsdActions
-        {
-            private @PlayerInputActions m_Wrapper;
-            public AsdActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
-            public InputAction @Newaction => m_Wrapper.m_asd_Newaction;
-            public InputActionMap Get() { return m_Wrapper.m_asd; }
-            public void Enable() { Get().Enable(); }
-            public void Disable() { Get().Disable(); }
-            public bool enabled => Get().enabled;
-            public static implicit operator InputActionMap(AsdActions set) { return set.Get(); }
-            public void SetCallbacks(IAsdActions instance)
-            {
-                if (m_Wrapper.m_AsdActionsCallbackInterface != null)
-                {
-                    @Newaction.started -= m_Wrapper.m_AsdActionsCallbackInterface.OnNewaction;
-                    @Newaction.performed -= m_Wrapper.m_AsdActionsCallbackInterface.OnNewaction;
-                    @Newaction.canceled -= m_Wrapper.m_AsdActionsCallbackInterface.OnNewaction;
-                }
-                m_Wrapper.m_AsdActionsCallbackInterface = instance;
-                if (instance != null)
-                {
-                    @Newaction.started += instance.OnNewaction;
-                    @Newaction.performed += instance.OnNewaction;
-                    @Newaction.canceled += instance.OnNewaction;
-                }
-            }
-        }
-        public AsdActions @asd => new AsdActions(this);
         private int m_KeyboardMouseSchemeIndex = -1;
         public InputControlScheme KeyboardMouseScheme
         {
@@ -1180,10 +1117,6 @@ namespace TopDownGame.Inputs
             void OnRightClick(InputAction.CallbackContext context);
             void OnTrackedDevicePosition(InputAction.CallbackContext context);
             void OnTrackedDeviceOrientation(InputAction.CallbackContext context);
-        }
-        public interface IAsdActions
-        {
-            void OnNewaction(InputAction.CallbackContext context);
         }
     }
 }

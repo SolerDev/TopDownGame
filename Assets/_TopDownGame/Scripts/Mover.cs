@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace TopDownGame
 {
+
     [RequireComponent(typeof(Rigidbody2D))]
     public class Mover : MonoBehaviour, IMover
     {
