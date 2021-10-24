@@ -188,7 +188,7 @@ PrefabInstance:
     - target: {fileID: 4384219631329270836, guid: 189c6aa7d1fb93d4590b77af4a9d875f,
         type: 3}
       propertyPath: m_Name
-      value: 'Manager: Input'
+      value: Manager - Input
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 189c6aa7d1fb93d4590b77af4a9d875f, type: 3}
@@ -346,7 +346,7 @@ PrefabInstance:
     - target: {fileID: 5390208671430420437, guid: 1de96941f61487940b079d2749e9dfc2,
         type: 3}
       propertyPath: m_Name
-      value: 'Installer: Systems'
+      value: Installer - Systems
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1de96941f61487940b079d2749e9dfc2, type: 3}
@@ -383,7 +383,7 @@ PrefabInstance:
     - target: {fileID: 517733323088559471, guid: 21eb23546648c2542a00ffce23faaa3c,
         type: 3}
       propertyPath: m_Name
-      value: 'Context: Systems'
+      value: Context - Systems
       objectReference: {fileID: 0}
     - target: {fileID: 9160053828991519010, guid: 21eb23546648c2542a00ffce23faaa3c,
         type: 3}
@@ -507,7 +507,7 @@ PrefabInstance:
     - target: {fileID: 4384219631329270836, guid: 189c6aa7d1fb93d4590b77af4a9d875f,
         type: 3}
       propertyPath: m_Name
-      value: 'Manager: Coroutines'
+      value: Manager - Coroutines
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 189c6aa7d1fb93d4590b77af4a9d875f, type: 3}

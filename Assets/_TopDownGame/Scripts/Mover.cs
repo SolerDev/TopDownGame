@@ -23,10 +23,10 @@ namespace TopDownGame
         /// </summary>
         /// <param name="direction"></param>
         /// <param name="speed"></param>
-        public void Move(Vector2 direction, float speed)
+        public void SetMovement(Vector2 direction, float speed)
         {
             var targetTranslation = direction * speed;
-            _rb.position += targetTranslation;
+            _rb.MovePosition(_rb.position + targetTranslation);
         }
 
         private void FixedUpdate()
@@ -49,6 +49,6 @@ namespace TopDownGame
     {
         event Action<Vector2> OnMoved;
 
-        void Move(Vector2 direction, float speed);
+        void SetMovement(Vector2 direction, float speed);
     }
 }

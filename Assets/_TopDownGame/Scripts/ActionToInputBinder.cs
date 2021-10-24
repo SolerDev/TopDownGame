@@ -15,9 +15,7 @@ namespace TopDownGame.Inputs
 
         private PlayerInputActions _inputActions;
         private InputAction _move;
-
-        private InputAction.CallbackContext _moveDirectionContext;
-        private bool _isMoving = false;
+        private Vector2 _inputDirection;
 
 
 
@@ -35,15 +33,14 @@ namespace TopDownGame.Inputs
 
         private void FixedUpdate()
         {
-            if (_isMoving)
-                _mover.Move(_moveDirectionContext.ReadValue<Vector2>(), _speeder.Speed);
+            _mover.SetMovement(_inputDirection, _speeder.Speed);
         }
 
         private void OnEnable()
         {
             _move = _inputActions.Player.Move;
-            _move.performed += OnBeginMove;
-            _move.canceled += OnEndMove;
+            _move.performed += OnMoveChanged;
+            _move.canceled += OnMoveChanged;
             _move.Enable();
         }
 
@@ -54,15 +51,9 @@ namespace TopDownGame.Inputs
 
 
 
-        private void OnBeginMove(InputAction.CallbackContext obj)
+        private void OnMoveChanged(InputAction.CallbackContext obj)
         {
-            _isMoving = true;
-            _moveDirectionContext = obj;
-        }
-
-        private void OnEndMove(InputAction.CallbackContext _)
-        {
-            _isMoving = false;
+            _inputDirection = obj.ReadValue<Vector2>();
         }
     }
 }

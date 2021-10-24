@@ -30,19 +30,19 @@ namespace TopDownGame.Tests.PlayMode
         public IEnumerator Move([ValueSource(nameof(s_directions))] Vector2 direction,
                                 [ValueSource(nameof(s_speeds))] float speed)
         {
-            GameObject gameObject = new GameObject();
-            var rb = gameObject.AddComponent<Rigidbody2D>();
-            rb.isKinematic = true;
-            var mover = gameObject.AddComponent<Mover>();
+            GameObject go = new GameObject();
+            var rb = go.AddComponent<Rigidbody2D>();
+            rb.gravityScale = 0f;
+            var mover = go.AddComponent<Mover>();
 
             var preMovePosition = rb.position;
-            mover.Move(direction, speed);
 
+            mover.SetMovement(direction, speed);
             yield return new WaitForFixedUpdate();
 
             var postMovePosition = rb.position;
-            var movement = postMovePosition - preMovePosition;
 
+            var movement = postMovePosition - preMovePosition;
             var expectedMovement = direction * speed;
             Assert.AreEqual(expectedMovement, movement);
         }
