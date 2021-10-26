@@ -37,7 +37,7 @@ namespace TopDownGame.Tests.PlayMode
 
             var preMovePosition = rb.position;
 
-            mover.SetMovement(direction, speed);
+            mover.Move(direction, speed);
             yield return new WaitForFixedUpdate();
 
             var postMovePosition = rb.position;

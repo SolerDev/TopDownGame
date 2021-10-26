@@ -10,7 +10,7 @@ namespace TopDownGame.Inputs
 {
     public class ActionToInputBinder : MonoBehaviour
     {
-        private IMover _mover;
+        private IMove _mover;
         private ISpeeder _speeder;
 
         private PlayerInputActions _inputActions;
@@ -22,7 +22,7 @@ namespace TopDownGame.Inputs
         [Inject]
         private void Construct([Inject(Id = "Player")] GameObject player)
         {
-            _mover = player.GetComponent<IMover>();
+            _mover = player.GetComponent<IMove>();
             _speeder = player.GetComponent<ISpeeder>();
         }
 
@@ -33,7 +33,7 @@ namespace TopDownGame.Inputs
 
         private void FixedUpdate()
         {
-            _mover.SetMovement(_inputDirection, _speeder.Speed);
+            _mover.Move(_inputDirection, _speeder.Speed);
         }
 
         private void OnEnable()
