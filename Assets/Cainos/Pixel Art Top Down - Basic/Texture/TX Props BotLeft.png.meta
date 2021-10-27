@@ -432,6 +432,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -514,7 +515,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: eaf26145cdbcaf280800000000000000
-      internalID: -9008663957437272146
+      internalID: 21300036
       vertices: []
       indices: 
       edges: []
@@ -745,7 +746,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 9826083cf0f420520800000000000000
-      internalID: 2666780858479829641
+      internalID: 21300034
       vertices: []
       indices: 
       edges: []
@@ -1039,7 +1040,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 60ab7fc9a0d613090800000000000000
-      internalID: -8056538366038525434
+      internalID: 21300066
       vertices: []
       indices: 
       edges: []
@@ -1621,6 +1622,60 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      TX Props Chest Closed: 1873020813318435983
+      TX Props Barrel: 21300066
+      TX Props 1_20: -4638184304506806324
+      TX Props 1_26: -5135308354697687311
+      TX Props Sign Left: -7364878560678028099
+      TX Props 1_52: 453629114231560643
+      TX Props 1_36: -5792432962328609360
+      TX Props 1_4: -7301308393108860729
+      TX Props 1_17: 2627036355397259503
+      TX Props 1_40: 7604658581665908372
+      TX Props 1_3: 4289628320527376629
+      TX Props 1_42: 7888694450307588932
+      TX Props 1_48: 7872300469298657714
+      TX Props 1_16: -4175999424179577208
+      TX Props 1_14: -5809387044286726073
+      TX Props Sturd: 668715324146816061
+      TX Props 1_44: -1065161830579756978
+      TX Props 1_8: 7731061430147365022
+      TX Props 1_7: -2415193932174902891
+      TX Props Pot Slim: 7889223855480573650
+      TX Props 1_49: 1348448716153373754
+      TX Props 1_47: -8103212168370529022
+      TX Props 1_39: 5407610887997055101
+      TX Props Crate: 21300034
+      TX Props 1_12: 4359057720471007770
+      TX Props Door Closed: -3517885025490897099
+      TX Props Sign Right: 2859130935925473440
+      TX Props 1_31: -8580275626830785913
+      TX Props 1_46: -3919623408671869379
+      TX Props 1_37: 6424198714859560924
+      TX Props Door Open Right: 2044568937566051189
+      TX Props Door Open Left: 1375270226637479587
+      TX Props 1_43: -4433212270193779628
+      TX Props 1_28: 697693461260410669
+      TX Props Cube: 21300036
+      TX Props 1_27: -7874502103232596226
+      TX Props Pot Round: -4802521051248629753
+      TX Props 1_21: -6294839563822751134
+      TX Props 1_33: 6143709388631820613
+      TX Props 1_34: -1341333451186597276
+      TX Props Chest Open: 2031675604680557288
+      TX Props 1_50: -8315130718568191009
+      TX Props 1_6: 5194327913765502223
+      TX Props 1_5: 3799774927450718860
+      TX Props CrateX: 6918240453215507142
+      TX Props 1_32: -7492665905165225352
+      TX Props 1_35: -2170233723113731311
+      TX Props 1_45: -5219037348065621395
+      TX Props 1_18: 2087396942717935769
+      TX Props 1_51: 5449479172351819244
+      TX Props 1_19: 2499174156601942709
+      TX Props 1_13: -1491201399253992506
+      TX Props 1_15: 2448347462235270868
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

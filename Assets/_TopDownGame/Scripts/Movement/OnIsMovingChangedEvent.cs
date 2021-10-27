@@ -6,7 +6,7 @@ namespace TopDownGame
     {
         protected virtual void Awake()
         {
-            GetComponentInParent<IMove>().OnIsMovingChanged += OnIsMovingChanged;
+            GetComponentInParent<IMove>().IsMoving.OnValueChanged += OnIsMovingChanged;
         }
 
         protected abstract void OnIsMovingChanged(bool isMoving);

@@ -11,13 +11,14 @@ namespace TopDownGame
         [SerializeField] private float _decelerationTime = 0.2f;
 
         public event Action<Vector2> OnMoved;
-        public event Action<bool> OnIsMovingChanged;
+        public Observable<bool> IsMoving { get; private set; } = new Observable<bool>();
 
         private Rigidbody2D _rb;
         private Vector2 _previousPosition;
 
         private bool _wasMoving = false;
         private Vector2 _smoothVelocity;
+
 
         private void Awake()
         {
@@ -51,8 +52,6 @@ namespace TopDownGame
 
             if (isMoving)
                 OnMoved?.Invoke(movement);
-            if (!_wasMoving.Equals(isMoving))
-                OnIsMovingChanged?.Invoke(isMoving);
 
             _wasMoving = isMoving;
         }
@@ -70,7 +69,7 @@ namespace TopDownGame
     public interface IMove
     {
         event Action<Vector2> OnMoved;
-        event Action<bool> OnIsMovingChanged;
+        Observable<bool> IsMoving { get; }
         void Move(Vector2 direction, float speed);
     }
 }
