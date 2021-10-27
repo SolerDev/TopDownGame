@@ -2,10 +2,12 @@
 
 namespace TopDownGame
 {
-    public class Speeder : MonoBehaviour, ISpeeder
+    public class SpeedProvider : MonoBehaviour, IObservableProvider<float>
     {
         [SerializeField] private float _speed;
-        public Observable<float> Speed { get; } = new Observable<float>(5);
+        private readonly Observable<float> _observedSpeed = new Observable<float>(5);
+        public Observable<float> Observed => _observedSpeed;
+
 
 #if UNITY_EDITOR
 
@@ -16,15 +18,10 @@ namespace TopDownGame
             if (_oldSpeed != _speed)
             {
                 _oldSpeed = _speed;
-                Speed.Set(_speed);
+                _observedSpeed.Set(_speed);
             }
         }
 
 #endif
-    }
-
-    public interface ISpeeder
-    {
-        Observable<float> Speed { get; }
     }
 }
