@@ -13,12 +13,12 @@ namespace TopDownGame
             _value = value;
         }
 
-        public T Get()
+        public T Read()
         {
             return _value;
         }
 
-        public void Set(T value)
+        public void Write(T value)
         {
             if (value.Equals(_value))
                 return;
@@ -29,7 +29,7 @@ namespace TopDownGame
 
         public static implicit operator T(Observable<T> obs)
         {
-            return obs.Get();
+            return obs.Read();
         }
     }
 }

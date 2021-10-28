@@ -241,6 +241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c554942e99a34c4da6f6ee5229b5ae1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedReference: {fileID: 11400000, guid: 8fdcc09806cb5694792460e52e595d22, type: 2}
 --- !u!1001 &1408483003
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -464,7 +465,7 @@ PrefabInstance:
     - target: {fileID: 6172543078047879645, guid: 4181fbc13382a4f4d9f24d675a81411d,
         type: 3}
       propertyPath: m_Name
-      value: PlayerInputBinder
+      value: InputActionsProvider
       objectReference: {fileID: 0}
     - target: {fileID: 6172543078047879647, guid: 4181fbc13382a4f4d9f24d675a81411d,
         type: 3}

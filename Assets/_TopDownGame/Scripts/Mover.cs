@@ -52,8 +52,11 @@ namespace TopDownGame
 
             if (isMoving)
                 OnMoved?.Invoke(movement);
-
-            _wasMoving = isMoving;
+            if (!isMoving.Equals(_wasMoving))
+            {
+                IsMoving.Write(IsMoving);
+                _wasMoving = isMoving;
+            }
         }
 
         private bool HasMoved(out Vector2 movement)

@@ -18,7 +18,7 @@ namespace TopDownGame
             if (_oldSpeed != _speed)
             {
                 _oldSpeed = _speed;
-                _observedSpeed.Set(_speed);
+                _observedSpeed.Write(_speed);
             }
         }
 
