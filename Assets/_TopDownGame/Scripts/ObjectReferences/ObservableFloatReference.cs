@@ -6,5 +6,4 @@ namespace ObjectReferences
     public class ObservableFloatReference : ObservableRawDataReference<float>
     {
     }
-
 }

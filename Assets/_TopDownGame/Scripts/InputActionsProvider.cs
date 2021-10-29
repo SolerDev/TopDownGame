@@ -12,10 +12,15 @@ namespace TopDownGame.Inputs
     {
         public InputAction Move { get; private set; }
 
+
+        [Inject]
+        private void Construct(PlayerInputActions inputActions)
+        {
+            Move = inputActions.Player.Move;
+        }
+
         private void OnEnable()
         {
-            var inputActions = new PlayerInputActions();
-            Move = inputActions.Player.Move;
             Move.Enable();
         }
 

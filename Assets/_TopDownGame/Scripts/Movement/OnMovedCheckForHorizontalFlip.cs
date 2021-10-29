@@ -21,8 +21,8 @@ namespace TopDownGame
 
             if (!_wasFacingRight.Equals(isFacingRight))
             {
-                _wasFacingRight = isFacingRight;
                 _transform.localScale = new Vector3(isFacingRight ? 1 : -1, 1, 1);
+                _wasFacingRight = isFacingRight;
             }
         }
     }

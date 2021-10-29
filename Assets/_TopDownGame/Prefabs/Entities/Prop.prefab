@@ -17,6 +17,11 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: -44025399
       objectReference: {fileID: 0}
+    - target: {fileID: 5270824841087024860, guid: 0077e4df8ef01064ca89a481030f6ae4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7545858524301577322, guid: 0077e4df8ef01064ca89a481030f6ae4,
         type: 3}
       propertyPath: m_Name
@@ -26,6 +31,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7545858524301577322, guid: 0077e4df8ef01064ca89a481030f6ae4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7823364889220874069, guid: 0077e4df8ef01064ca89a481030f6ae4,
         type: 3}

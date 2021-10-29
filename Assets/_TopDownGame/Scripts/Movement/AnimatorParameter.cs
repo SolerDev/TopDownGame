@@ -6,7 +6,7 @@ using UnityEngine;
 namespace TopDownGame
 {
     [Serializable]
-    public abstract class AnimatorParam
+    public abstract class AnimatorParameter
     {
         protected string _name;
 
@@ -15,7 +15,7 @@ namespace TopDownGame
         protected Animator _animator;
         protected int _hash;
 
-        protected AnimatorParam(string name, Animator animator)
+        protected AnimatorParameter(string name, Animator animator)
         {
             Validate(name, animator);
 
@@ -50,7 +50,7 @@ namespace TopDownGame
 
 
     [Serializable]
-    public abstract class AnimatorParam<T> : AnimatorParam
+    public abstract class AnimatorParam<T> : AnimatorParameter
     {
         protected T _value;
 
@@ -58,6 +58,9 @@ namespace TopDownGame
 
         public void Set(T value)
         {
+            if (_value.Equals(value))
+                return;
+
             _value = value;
             OnValueChanged(value);
         }

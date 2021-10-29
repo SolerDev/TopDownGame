@@ -1,5 +1,4 @@
-﻿using System;
-using ObjectReferences;
+﻿using ObjectReferences;
 using TopDownGame.Inputs;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -7,6 +6,7 @@ using Zenject;
 
 namespace TopDownGame
 {
+
     public class OnMoveInputSetMoveDirection : MonoBehaviour
     {
         private IMove _mover;
@@ -18,11 +18,15 @@ namespace TopDownGame
         private void Construct(InputActionsProvider inputActions)
         {
             inputActions.Move.performed += OnPerformed;
+            inputActions.Move.canceled += OnCanceled;
+
+            //todo: inject instead of instantiate
+            _mover = GetComponentInParent<IMove>();
         }
 
-        private void Awake()
+        private void OnCanceled(InputAction.CallbackContext obj)
         {
-            _mover = GetComponentInParent<IMove>();
+            _moveDirection = Vector2.zero;
         }
 
         private void OnPerformed(InputAction.CallbackContext obj)

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using TopDownGame;
+using UnityEngine;
 
 namespace ObjectReferences
 {
@@ -6,17 +7,10 @@ namespace ObjectReferences
     {
         [SerializeField] private T _dataValue;
 
-        protected override void OnEnable()
-        {
-            base.OnEnable();
-            _dataValue = Get().Read();
-        }
 
-        private void OnValidate()
+        protected override void Initialize()
         {
-            var observable = Get();
-            if (!observable.Read().Equals(_dataValue))
-                observable.Write(_dataValue);
+            _value = new Observable<T>(_dataValue);
         }
     }
 }

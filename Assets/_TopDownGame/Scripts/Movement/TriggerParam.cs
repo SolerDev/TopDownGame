@@ -4,7 +4,7 @@ using UnityEngine;
 namespace TopDownGame
 {
     [Serializable]
-    public class TriggerParam : AnimatorParam
+    public class TriggerParam : AnimatorParameter
     {
         public TriggerParam(string name, Animator animator) : base(name, animator)
         {

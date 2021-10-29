@@ -15,8 +15,6 @@ namespace TopDownGame
 
         private Rigidbody2D _rb;
         private Vector2 _previousPosition;
-
-        private bool _wasMoving = false;
         private Vector2 _smoothVelocity;
 
 
@@ -32,7 +30,7 @@ namespace TopDownGame
         /// <param name="speed"></param>
         public void Move(Vector2 direction, float speed)
         {
-            bool isStopping = direction.magnitude == 0;
+            bool isStopping = direction.magnitude < 0.2f;
             var targetTranslation = direction * speed;
             var currentPosition = _rb.position;
             var targetPosition = currentPosition + targetTranslation;
@@ -40,7 +38,7 @@ namespace TopDownGame
             var smoothPosition = Vector2.SmoothDamp(currentPosition,
                                                     targetPosition,
                                                     ref _smoothVelocity,
-                                                     isStopping ? _decelerationTime : _accelerationTime);
+                                                    isStopping ? _decelerationTime : _accelerationTime);
 
             _rb.MovePosition(smoothPosition);
         }
@@ -52,11 +50,6 @@ namespace TopDownGame
 
             if (isMoving)
                 OnMoved?.Invoke(movement);
-            if (!isMoving.Equals(_wasMoving))
-            {
-                IsMoving.Write(IsMoving);
-                _wasMoving = isMoving;
-            }
         }
 
         private bool HasMoved(out Vector2 movement)
@@ -65,7 +58,7 @@ namespace TopDownGame
             movement = currentPosition - _previousPosition;
             _previousPosition = currentPosition;
 
-            return !movement.Equals(Vector2.zero);
+            return movement.Equals(Vector2.zero);
         }
     }
 
