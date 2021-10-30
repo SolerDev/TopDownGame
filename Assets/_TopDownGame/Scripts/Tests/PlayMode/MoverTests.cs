@@ -7,6 +7,7 @@ using UnityEngine.TestTools;
 
 namespace TopDownGame.Tests.PlayMode
 {
+    //todo: learn how to test in scale. This can't be it since it takes too long
     public class MoverTests
     {
         private static readonly Vector2[] s_directions = new Vector2[]

@@ -192,95 +192,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 189c6aa7d1fb93d4590b77af4a9d875f, type: 3}
---- !u!1 &494610865 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4384219631329270836, guid: 189c6aa7d1fb93d4590b77af4a9d875f,
-    type: 3}
-  m_PrefabInstance: {fileID: 494610864}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &494610866
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 494610865}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: b0faa014494354445bf47d220d63dc29,
-    type: 3}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 92144ff0-0b3c-4b63-852f-fec23ec6457c
-    m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 33f74251-5d06-4723-9eec-df0a332fc256
-    m_ActionName: Player/Look[/Mouse/delta]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: a8b505a5-4ae7-4d2f-be6f-2d7d752c8bdd
-    m_ActionName: Player/Fire[/Mouse/leftButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: e64be35b-eeb5-400e-bec5-8b78f8333933
-    m_ActionName: UI/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 7ddb39bb-02c6-4e31-94a9-c67315b5e500
-    m_ActionName: UI/Submit[/Keyboard/enter]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: a1413f9c-b4d2-48fe-9032-ca8e480e57ce
-    m_ActionName: UI/Cancel[/Keyboard/escape]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 37227ac8-8f67-47c2-a085-4ca345c1835a
-    m_ActionName: UI/Point[/Mouse/position]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 853490b9-b9ca-4460-b00a-f1947f0dd1d2
-    m_ActionName: UI/Click[/Mouse/leftButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 33d27183-0101-41cf-b37c-e26bd3c26124
-    m_ActionName: UI/ScrollWheel[/Mouse/scroll]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: c1d3ec21-4dbd-4ef9-a97c-23ea6aa88a83
-    m_ActionName: UI/MiddleClick[/Mouse/middleButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 217ae473-28a4-4a66-a5e9-52c30ec6a38c
-    m_ActionName: UI/RightClick[/Mouse/rightButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: ca97a4ec-1a13-4e79-8cab-887f790b342c
-    m_ActionName: UI/TrackedDevicePosition
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: f3d868fa-13fc-4865-a847-05edef1941e0
-    m_ActionName: UI/TrackedDeviceOrientation
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Keyboard&Mouse
-  m_DefaultActionMap: Player
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!1001 &727158435
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -377,9 +288,24 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 21738969566440750, guid: 21eb23546648c2542a00ffce23faaa3c,
         type: 3}
+      propertyPath: _contractNames.Array.data[0]
+      value: Systems
+      objectReference: {fileID: 0}
+    - target: {fileID: 21738969566440750, guid: 21eb23546648c2542a00ffce23faaa3c,
+        type: 3}
       propertyPath: _monoInstallers.Array.data[0]
       value: 
       objectReference: {fileID: 727158437}
+    - target: {fileID: 21738969566440750, guid: 21eb23546648c2542a00ffce23faaa3c,
+        type: 3}
+      propertyPath: _parentContractNames.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 21738969566440750, guid: 21eb23546648c2542a00ffce23faaa3c,
+        type: 3}
+      propertyPath: _parentContractNames.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 517733323088559471, guid: 21eb23546648c2542a00ffce23faaa3c,
         type: 3}
       propertyPath: m_Name

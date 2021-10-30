@@ -219,6 +219,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 21738969566440750, guid: 21eb23546648c2542a00ffce23faaa3c,
         type: 3}
+      propertyPath: _contractNames.Array.data[0]
+      value: Pools
+      objectReference: {fileID: 0}
+    - target: {fileID: 21738969566440750, guid: 21eb23546648c2542a00ffce23faaa3c,
+        type: 3}
       propertyPath: _monoInstallers.Array.data[0]
       value: 
       objectReference: {fileID: 727158437}

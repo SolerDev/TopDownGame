@@ -2,7 +2,7 @@
 
 namespace TopDownGame
 {
-    public class LevelInstaller : MonoInstaller
+    public class VisualInstaller : MonoInstaller
     {
         public override void InstallBindings()
         {

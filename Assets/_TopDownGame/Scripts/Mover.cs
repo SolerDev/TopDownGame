@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using Zenject;
 
 namespace TopDownGame
 {
@@ -18,10 +19,16 @@ namespace TopDownGame
         private Vector2 _smoothVelocity;
         private bool _wasMoving = false;
 
-        private void Awake()
+
+
+        [Inject]
+        private void Construct(Rigidbody2D rb)
         {
-            _rb = GetComponent<Rigidbody2D>();
+            _rb = rb;
         }
+
+
+
 
         /// <summary>
         /// Moves the object via it's Rigidbody2D. Should be used inside FixedUpdate.
