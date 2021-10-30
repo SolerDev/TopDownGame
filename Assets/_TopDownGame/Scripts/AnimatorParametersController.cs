@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
@@ -7,16 +8,11 @@ namespace TopDownGame
     [RequireComponent(typeof(Animator))]
     public class AnimatorParametersController : MonoBehaviour
     {
-        private Dictionary<string, AnimatorParameter> _paramsByName = new Dictionary<string, AnimatorParameter>();
-        public IReadOnlyDictionary<string, AnimatorParameter> ParamsByName => _paramsByName;
-
+        private readonly Dictionary<string, AnimatorParameter> _paramsByName = new Dictionary<string, AnimatorParameter>();
 
         [Inject]
-        private void Construct(/*Animator animator*/)
+        private void Construct(Animator animator)
         {
-            //todo: injetar
-            var animator = transform.parent.GetComponentInChildren<Animator>();
-
             foreach (var param in animator.parameters)
                 AddParam(param, animator);
         }
@@ -45,6 +41,21 @@ namespace TopDownGame
             }
 
             _paramsByName.Add(paramName, p);
+        }
+
+        public AnimatorParam<T> GetParameter<T>(string name)
+        {
+            if (!_paramsByName.ContainsKey(name))
+                throw new KeyNotFoundException($"Parameter {name} not found in {this}");
+
+            try
+            {
+                return (AnimatorParam<T>)_paramsByName[name];
+            }
+            catch (Exception e)
+            {
+                throw new InvalidCastException($"Error while looking up {name} on {this}", e);
+            }
         }
     }
 }

@@ -1,16 +1,17 @@
 ﻿using UnityEngine;
+using Zenject;
 
 namespace TopDownGame
 {
     public class OnIsMovingChangedSetPlayerAnimatorParams : OnIsMovingChangedEvent
     {
-        private BoolParam _isMoving;
+        private AnimatorParam<bool> _isMoving;
 
-        protected override void Awake()
+
+        [Inject]
+        private void Construct(AnimatorParametersController animatorParametersController)
         {
-            base.Awake();
-
-            _isMoving = new BoolParam("IsMoving", GetComponentInParent<Animator>());
+            _isMoving = animatorParametersController.GetParameter<bool>("IsMoving");
         }
 
         protected override void OnIsMovingChanged(bool isMoving)

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Zenject;
 
 namespace TopDownGame
 {
@@ -7,17 +8,12 @@ namespace TopDownGame
         private AnimatorParam<float> _velX;
         private AnimatorParam<float> _velY;
 
-        protected override void Awake()
+
+        [Inject]
+        private void Construct(AnimatorParametersController animatorParametersController)
         {
-            base.Awake();
-
-            var animatorParametersController = transform.parent.GetComponentInChildren<AnimatorParametersController>();
-            _velX = (AnimatorParam<float>)animatorParametersController.ParamsByName["VelX"];
-            _velY = (AnimatorParam<float>)animatorParametersController.ParamsByName["VelY"];
-
-            //var animator = transform.parent.GetComponentInChildren<Animator>();
-            //_velX = new FloatParam("VelX", animator);
-            //_velY = new FloatParam("VelY", animator);
+            _velX = animatorParametersController.GetParameter<float>("VelX");
+            _velY = animatorParametersController.GetParameter<float>("VelY");
         }
 
         protected override void OnMoved(Vector2 movement)

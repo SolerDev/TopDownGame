@@ -21,16 +21,21 @@ namespace TopDownGame
             Container.BindInstance(new PlayerInputActions()).AsSingle().NonLazy();
             Container.Bind<InputActionsProvider>().FromComponentInHierarchy().AsSingle().NonLazy();
 
-            //Container.Bind<Animator>()
-            //         .FromComponentInChildren()
-            //         .AsCached()
-            //         .WhenInjectedInto<AnimatorParametersController>()
-            //         .NonLazy();
 
-            //Container.Bind<AnimatorParametersController>()
-            //         .FromComponentSibling()
-            //         .AsCached()
-            //         .NonLazy();
+            Container.Bind<Animator>()
+                     .FromComponentInChildren()
+                     .AsTransient()
+                     .Lazy();
+
+            Container.Bind<AnimatorParametersController>()
+                     .FromComponentInChildren()
+                     .AsTransient()
+                     .Lazy();
+
+            Container.Bind<IMove>()
+                     .FromComponentInParents()
+                     .AsTransient()
+                     .Lazy();
         }
     }
 }

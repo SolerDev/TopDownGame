@@ -12,14 +12,12 @@ namespace TopDownGame
         private AnimatorParam<float> _inputY;
 
         [Inject]
-        private void Construct(InputActionsProvider inputActions/*, AnimatorParametersController animParamCtrl*/)
+        private void Construct(InputActionsProvider inputActions, AnimatorParametersController animatorParametersController)
         {
-            var animParamCtrl = transform.parent.GetComponentInChildren<AnimatorParametersController>();
-
             inputActions.Move.performed += OnPerformed;
 
-            _inputX = (AnimatorParam<float>)animParamCtrl.ParamsByName["InputX"];
-            _inputY = (AnimatorParam<float>)animParamCtrl.ParamsByName["InputY"];
+            _inputX = animatorParametersController.GetParameter<float>("InputX");
+            _inputY = animatorParametersController.GetParameter<float>("InputY");
         }
 
         private void OnPerformed(InputAction.CallbackContext obj)

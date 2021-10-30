@@ -16,7 +16,7 @@ namespace TopDownGame
         private Rigidbody2D _rb;
         private Vector2 _previousPosition;
         private Vector2 _smoothVelocity;
-
+        private bool _wasMoving = false;
 
         private void Awake()
         {
@@ -30,6 +30,13 @@ namespace TopDownGame
         /// <param name="speed"></param>
         public void Move(Vector2 direction, float speed)
         {
+            var smoothPosition = GetSmoothPosition(direction, speed);
+
+            _rb.MovePosition(smoothPosition);
+        }
+
+        private Vector2 GetSmoothPosition(Vector2 direction, float speed)
+        {
             bool isStopping = direction.magnitude < 0.2f;
             var targetTranslation = direction * speed;
             var currentPosition = _rb.position;
@@ -39,10 +46,8 @@ namespace TopDownGame
                                                     targetPosition,
                                                     ref _smoothVelocity,
                                                     isStopping ? _decelerationTime : _accelerationTime);
-
-            _rb.MovePosition(smoothPosition);
+            return smoothPosition;
         }
-
 
         private void FixedUpdate()
         {
@@ -50,6 +55,11 @@ namespace TopDownGame
 
             if (isMoving)
                 OnMoved?.Invoke(movement);
+            if (_wasMoving != isMoving)
+            {
+                _wasMoving = isMoving;
+                IsMoving.Write(isMoving);
+            }
         }
 
         private bool HasMoved(out Vector2 movement)
@@ -58,7 +68,7 @@ namespace TopDownGame
             movement = currentPosition - _previousPosition;
             _previousPosition = currentPosition;
 
-            return movement.Equals(Vector2.zero);
+            return !movement.Equals(Vector2.zero);
         }
     }
 

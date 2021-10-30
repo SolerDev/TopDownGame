@@ -15,13 +15,12 @@ namespace TopDownGame
 
 
         [Inject]
-        private void Construct(InputActionsProvider inputActions)
+        private void Construct(InputActionsProvider inputActions, IMove mover)
         {
+            _mover = mover;
+
             inputActions.Move.performed += OnPerformed;
             inputActions.Move.canceled += OnCanceled;
-
-            //todo: inject instead of instantiate
-            _mover = GetComponentInParent<IMove>();
         }
 
         private void OnCanceled(InputAction.CallbackContext obj)
