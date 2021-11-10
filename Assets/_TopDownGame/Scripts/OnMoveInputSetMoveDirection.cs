@@ -6,11 +6,9 @@ using Zenject;
 
 namespace TopDownGame
 {
-
     public class OnMoveInputSetMoveDirection : MonoBehaviour
     {
         private IMove _mover;
-        [SerializeField] private ObservableFloatReference _speedReference;
         private Vector2 _moveDirection;
 
 
@@ -35,9 +33,7 @@ namespace TopDownGame
 
         private void FixedUpdate()
         {
-            var observableSpeed = _speedReference.Get();
-            float speed = observableSpeed.Read();
-            _mover.Move(_moveDirection, speed);
+            _mover.Move(_moveDirection);
         }
     }
 }

@@ -45,7 +45,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c554942e99a34c4da6f6ee5229b5ae1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedReference: {fileID: 11400000, guid: 8fdcc09806cb5694792460e52e595d22, type: 2}
 --- !u!114 &7793701450886065185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,6 +180,12 @@ PrefabInstance:
       propertyPath: m_AngularDrag
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3146527137768197962, guid: d67d8e5e5ff8b9d4b8375547f793c1d4,
+        type: 3}
+      propertyPath: _speedReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 8fdcc09806cb5694792460e52e595d22,
+        type: 2}
     - target: {fileID: 7020266171058797623, guid: d67d8e5e5ff8b9d4b8375547f793c1d4,
         type: 3}
       propertyPath: _speed

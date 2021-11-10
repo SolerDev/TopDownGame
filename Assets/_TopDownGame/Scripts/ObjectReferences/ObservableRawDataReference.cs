@@ -1,4 +1,5 @@
-﻿using TopDownGame;
+﻿using System;
+using TopDownGame;
 using UnityEngine;
 
 namespace ObjectReferences
@@ -11,6 +12,12 @@ namespace ObjectReferences
         protected override void Initialize()
         {
             _value = new Observable<T>(_dataValue);
+        }
+
+        private void OnValidate()
+        {
+            if (!_dataValue.Equals(Get().Read()))
+                Get().Write(_dataValue);
         }
     }
 }

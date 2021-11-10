@@ -324,6 +324,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5846182420343888337, guid: 818e1346f25228a40ac05f7ae889decc,
+        type: 3}
+      propertyPath: _accelerationTime
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5846182420343888337, guid: 818e1346f25228a40ac05f7ae889decc,
+        type: 3}
+      propertyPath: _decelerationTime
+      value: 0.075
+      objectReference: {fileID: 0}
     - target: {fileID: 6596243649860581432, guid: 818e1346f25228a40ac05f7ae889decc,
         type: 3}
       propertyPath: m_LocalPosition.x

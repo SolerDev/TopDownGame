@@ -1,29 +1,14 @@
 using System;
+using ObjectReferences;
 using UnityEngine;
 using Zenject;
 
 namespace TopDownGame
 {
-    public interface IMoveCalculationProvider
-    {
-        Vector2 Calculate(Vector2 currentPosition, Vector2 targetPosition, float acceleration, ref Vector2 smoothVelocity);
-    }
-
-    public class SmoothMovementCalculationProvider : IMoveCalculationProvider
-    {
-        public Vector2 Calculate(Vector2 currentPosition, Vector2 targetPosition, float acceleration, ref Vector2 smoothVelocity)
-        {
-            var smoothPosition = Vector2.SmoothDamp(currentPosition,
-                                                    targetPosition,
-                                                    ref smoothVelocity,
-                                                    acceleration);
-            return smoothPosition;
-        }
-    }
-
     [RequireComponent(typeof(Rigidbody2D))]
     public class Mover : MonoBehaviour, IMove
     {
+        [SerializeField] private ObservableFloatReference _speedReference;
         [SerializeField] private float _accelerationTime = 0.35f;
         [SerializeField] private float _decelerationTime = 0.2f;
 
@@ -31,7 +16,7 @@ namespace TopDownGame
         public Observable<bool> IsMoving { get; private set; } = new Observable<bool>();
 
         private Rigidbody2D _rb;
-        private IMoveCalculationProvider _moveCalculation;
+        private IVelocityCalculator _velocityCalculator;
         private Vector2 _previousPosition;
         private Vector2 _smoothVelocity;
         private bool _wasMoving = false;
@@ -39,10 +24,10 @@ namespace TopDownGame
 
 
         [Inject]
-        private void Construct(Rigidbody2D rb, IMoveCalculationProvider moveCalculation)
+        private void Construct(Rigidbody2D rb, IVelocityCalculator velocityCalculator)
         {
             _rb = rb;
-            _moveCalculation = moveCalculation;
+            _velocityCalculator = velocityCalculator;
         }
 
 
@@ -52,35 +37,23 @@ namespace TopDownGame
         /// Moves the object via it's Rigidbody2D. Should be used inside FixedUpdate.
         /// </summary>
         /// <param name="direction"></param>
-        /// <param name="speed"></param>
-        public void Move(Vector2 direction, float speed)
+        /// <param name="targetSpeed"></param>
+        public void Move(Vector2 direction)
         {
-            bool isStopping = speed == 0f || direction.Equals(Vector2.zero);
-            var currentPosition = _rb.position;
-            var targetPosition = currentPosition + direction * speed;
+            bool isStopping = direction.Equals(Vector2.zero);
 
+            var currentVelocity = _rb.velocity;
+            var targetVelocity = direction * _speedReference.Get();
+            float acceleration = isStopping ? _decelerationTime : _accelerationTime;
 
-            var finalTargetPosition = _moveCalculation.Calculate(currentPosition,
-                                                                 targetPosition,
-                                                                 isStopping ? _accelerationTime : _decelerationTime,
-                                                                 ref _smoothVelocity);
+            var velocity = _velocityCalculator.Calculate(currentVelocity,
+                                                         targetVelocity,
+                                                         acceleration,
+                                                         ref _smoothVelocity);
 
-            _rb.MovePosition(finalTargetPosition);
+            _rb.velocity = velocity;
         }
 
-        private Vector2 GetTargetPosition(Vector2 direction, float speed)
-        {
-            bool isStopping = direction.magnitude < 0.2f;
-            var targetTranslation = direction * speed;
-            var currentPosition = _rb.position;
-            var targetPosition = currentPosition + targetTranslation;
-
-            var smoothPosition = Vector2.SmoothDamp(currentPosition,
-                                                    targetPosition,
-                                                    ref _smoothVelocity,
-                                                    isStopping ? _decelerationTime : _accelerationTime);
-            return smoothPosition;
-        }
 
         private void FixedUpdate()
         {
@@ -109,6 +82,6 @@ namespace TopDownGame
     {
         event Action<Vector2> OnMoved;
         Observable<bool> IsMoving { get; }
-        void Move(Vector2 direction, float speed);
+        void Move(Vector2 direction);
     }
 }

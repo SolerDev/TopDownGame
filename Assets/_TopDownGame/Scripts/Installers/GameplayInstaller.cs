@@ -43,6 +43,11 @@ namespace TopDownGame
                      .FromComponentInChildren()
                      .AsTransient()
                      .Lazy();
+
+            Container.Bind<IVelocityCalculator>()
+                     .To<SmoothVelocityCalculator>()
+                     .AsCached()
+                     .NonLazy();
         }
     }
 }

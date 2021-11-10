@@ -7,8 +7,8 @@ namespace TopDownGame
         public override void InstallBindings()
         {
             //todo: add to projet context
-            Container.Bind<IMoveCalculationProvider>()
-                     .To<SmoothMovementCalculationProvider>()
+            Container.Bind<IVelocityCalculator>()
+                     .To<SmoothVelocityCalculator>()
                      .AsSingle()
                      .NonLazy();
         }
